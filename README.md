@@ -28,7 +28,7 @@ Fees paid: $0
 User: QUIT
 ```
 
-##Design Notes
+## Design Notes
 
 ### Structure
 The central class is the CarParkImpl, which manages a List of Vehicles that have used the car park.
@@ -45,15 +45,14 @@ I think the pattern is overkill for a small program like this.
 2. Command pattern. Use of the standard Command pattern to house program commands. 
 I think its overkill for a program of this size, but it demonstrates usage of the pattern.
 
-3. Help command. I though it might be useful.
+3. Help command. I thought it might be useful.
 
 4. Vehicle ID. This wasn't listed as a requirement, but I added a vehicle ID that is assigned upon entry. 
 This ID is used to identify a vehicle exiting the car park. 
 This grants the CarPark the ability to track individual vehicles and their parking times.
 However, it requires an extra 'ID' parameter for the "EXIT" command.
-This feature was not strictly needed and can be removed if needed.
 
-5. Timestamped reporting.
+5. Time-stamped reporting.
 
 6. Error handling. Once the CarPark has been successfully initialised, all Exceptions are trapped in the 
 main loop and print an error message. The user still has to manually "QUIT" the program to exit.
