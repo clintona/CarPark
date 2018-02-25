@@ -1,5 +1,7 @@
 package au.com.tla.carpark.command;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,4 +26,13 @@ public class ExitTruckCommandTest {
         cmd.execute(); // expect exception, wrong id (1) should be 2
     }
 
+    @Test
+    public void testExitSuccess() {
+        carPark.enterTruck(); // id 1
+
+        ExitTruckCommand cmd = new ExitTruckCommand(carPark, "1", 1);
+        cmd.execute();
+
+        assertEquals(1, carPark.getExitedTrucks().size());
+    }
 }

@@ -102,9 +102,9 @@ public class CarParkImpl implements CarPark {
 
     int getSpacesUsed() {
         int usedSpaces = 0;
-        for (VehicleRecord record : records) {
-            if (record.getDuration() < 1) { // vehicle is parked if duration == 0
-                usedSpaces += record.getVehicleType().getSize();
+        for (VehicleRecord vehicle : records) {
+            if (vehicle.isParked()) {
+                usedSpaces += vehicle.getSize();
             }
         }
         return usedSpaces;

@@ -51,4 +51,7 @@ public class VehicleRecord {
         return duration < 1;
     }
 
+    public int getSize() {
+    	return type.getSize();
+    }
 }
